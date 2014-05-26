@@ -1,18 +1,12 @@
-html{
+html {
 	font-size: 10px;
+	background-color: #4183c4;
 }
-body{
+
+body {
 	font-size: 1.6em;
 }
 
-/*section {
-    height: 100px;
-    width: 100px;
-    background-color: #C6E2FF;
-    border-radius: 10%;
-    border: 2px solid #6495ED;
-    margin: auto;
-}*/
 section.site, section.main, section.share{
 	width: 90%;
 	margin: 0 auto;
@@ -22,11 +16,12 @@ section.site, section.main, section.share{
 section.share, section.main{
 	width: 100%;
 }
+
 header {
 	width: 80%;
 	margin: 140px auto 150px;
 	font-size: 8em;
-	text-align: center;			
+	text-align: center;
 }
 
 p:nth-child(1){
@@ -38,6 +33,7 @@ p:nth-child(2){
 	color:#cc0000;
 }
 
+/*clearfix*/
 .clearfix:after {
 	visibility: hidden;
 	display: block;
@@ -51,13 +47,13 @@ p:nth-child(2){
 * html .clearfix { height: 1%; }
 .clearfix { display: block; }
 /* End hide from IE-mac */
+/*clearfix*/
 
 .share a{
 	display: inline-block;
-	float: left;
 	background-image: url(share.png);
 	background-size: 75px 150px;
-	text-indent: -999px;
+	text-indent: -9999px;
 	width: 24px;
 	height: 24px;
 	margin-left: 5px;
