@@ -1,7 +1,9 @@
-html, body {
+html{
 	font-size: 10px;
 }
-
+body{
+	font-size: 1.6em;
+}
 
 /*section {
     height: 100px;
@@ -22,8 +24,8 @@ section.share, section.main{
 }
 header {
 	width: 80%;
-	margin: 120px auto;
-	font-size: 1.6em;
+	margin: 140px auto 150px;
+	font-size: 8em;
 	text-align: center;			
 }
 
@@ -71,4 +73,10 @@ p:nth-child(2){
 
 #weibo {
 	background-position: -25px -100px;
+}
+
+@media (max-width: 600px) {
+  html {
+  	font-size: 7px;
+  }
 }
