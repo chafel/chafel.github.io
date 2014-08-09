@@ -1,13 +1,61 @@
 html {
 	font-size: 10px;
 	background-color: #FDF5E6;
+	font-family: Helvetica;
+	background:url("bcg.jpg");
+    background-size: cover;
+    background-position: center center;  /* IE 6/7/8 */
+    background-repeat:repeat-y;
+    background-attachment: fixed;
+    background-image: 100%;
 }
 
-body {
-	font-size: 1.6em;
+body{
+    font-size: 1.6em;
+    text-align:center;
 }
 
-section.site, section.main, section.share{
+.panel,.hide,.slide,.pull-me{
+	margin:0 auto;
+    padding:0;
+	width:200px;
+    text-align:center;
+}
+.pull-me{
+    float:center;
+    cursor:pointer;
+}
+.panel {
+	background: #ffffbd;
+    
+    height:150px;
+	display:none;
+}
+.panel p{
+    text-align:center;
+}
+.slide {
+	margin:0;
+	padding:0;
+}
+.pull-me {
+	display:block;
+    position:relative;
+    right:-25px;
+    width:150px;
+    height:20px;
+    font-size:14px;
+	color:#ffffff;
+    background:#cc0000;
+	text-decoration:none;
+    border-bottom-left-radius:5px;
+    border-bottom-right-radius:5px;
+}
+.pull-me p {
+    text-align:center;
+}
+
+section.site,section.main, section.share{
 	width: 90%;
 	margin: 0 auto;
 	text-align: center;
@@ -19,8 +67,8 @@ section.share, section.main{
 
 header {
 	width: 80%;
-	margin: 140px auto 150px;
-	font-size: 8em;
+	margin: 80px auto 50px;
+	font-size: 5em;
 	text-align: center;
 }
 
@@ -73,8 +121,33 @@ p:nth-child(4){
 	background-position: -25px -100px;
 }
 
+
 @media (max-width: 600px) {
   html {
   	font-size: 7px;
   }
+  #left,#right{
+  	clear: both;
+  }
+}
+.title{
+	text-align: center;
+}
+span{
+	text-shadow:0 0 3px #FF0000;
+	color: yellow;
+}
+#left,#right{
+	background-color: #FDF5E6;
+	opacity: 0.75;
+	display: inline-block;
+	width: 40%;
+	text-align:left;
+	color: blue;
+	border-radius: 5px;
+	padding: 0 20px;
+    float: right;
+}
+.title1,.title2{
+	padding: 0;
 }
