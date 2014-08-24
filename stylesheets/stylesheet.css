@@ -1,18 +1,33 @@
+/*reset css*/
+* {
+   -moz-box-sizing:    border-box;   /* Firefox 1, probably can drop this */
+   -webkit-box-sizing: border-box;   /* Safari 3-4, also probably droppable */
+    box-sizing:        border-box;   /* Everything else */
+}
+
 html {
 	font-size: 10px;
 	background-color: #FDF5E6;
 	font-family: Helvetica;
-	background:url("bcg.jpg");
+	background-image:url("../images/bg.png");
     background-size: cover;
     background-position: center center;  /* IE 6/7/8 */
     background-repeat:repeat-y;
     background-attachment: fixed;
-    background-image: 100%;
 }
 
 body{
     font-size: 1.6em;
     text-align:center;
+}
+/*reset css end*/
+
+.site {
+
+}
+
+.main {
+	clear: both;
 }
 
 .panel,.hide,.slide,.pull-me{
@@ -27,7 +42,7 @@ body{
 }
 .panel {
 	background: #ffffbd;
-    
+    padding-top: 69px;
     height:150px;
 	display:none;
 }
@@ -41,7 +56,6 @@ body{
 .pull-me {
 	display:block;
     position:relative;
-    right:-25px;
     width:150px;
     height:20px;
     font-size:14px;
@@ -101,7 +115,7 @@ p:nth-child(4){
 
 .share a{
 	display: inline-block;
-	background-image: url(share.png);
+	background-image: url("../images/share.png");
 	background-size: 75px 150px;
 	text-indent: -9999px;
 	width: 24px;
@@ -122,12 +136,12 @@ p:nth-child(4){
 }
 
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   html {
   	font-size: 7px;
   }
   #left,#right{
-  	clear: both;
+	float: none;
   }
 }
 .title{
@@ -146,7 +160,12 @@ span{
 	color: blue;
 	border-radius: 5px;
 	padding: 0 20px;
-    float: right;
+	border: 1px solid #913030;
+	float: left;
+	margin: 0 5%;
+}
+#left ol {
+	padding-left: 20px;
 }
 .title1,.title2{
 	padding: 0;
