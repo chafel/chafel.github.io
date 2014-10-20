@@ -108,7 +108,7 @@ p:nth-child(4){
 }
 .clearfix { display: inline-table; }
 /* Hides from IE-mac \*/
-* html .clearfix { height: 1%; }
+ html .clearfix { height: 100%; }
 .clearfix { display: block; }
 /* End hide from IE-mac */
 /*clearfix*/
