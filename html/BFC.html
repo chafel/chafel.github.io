@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>BFC</title>
+	<style>
+		*{
+            font-family:  Helvetica;
+        }
+        .main p{
+			line-height: 26px;
+			vertical-align: baseline;
+		}
+		
+		textarea{
+			height: 200px;
+			width: 400px;
+			float: left;
+			margin-right: 20px
+		}
+		
+		#layout1,#layout2 {
+        width: 300px;
+        position: relative;
+        float: left;
+		 margin-right: 600px
+    	}
+    	#left1, #left2{
+        width: 100px;
+        height: 150px;
+        float: left;
+        background: #f66;
+    	}
+ 
+    	#right1 {
+        height: 200px;
+        background: #fcc;
+    	}
+    	#right2 {
+        height: 200px;
+        background: #fcc;
+        overflow: hidden;
+       }
+    	.clear{
+    		clear: both;
+    	}
+		#layout3 {
+        border: 5px solid #fcc;
+        width: 300px;
+        float: left;
+	    }
+ 
+    	#right3,#left3{
+        border: 5px solid #f66;
+        width:100px;
+        height: 100px;
+        float: left;
+    	}
+		
+		#layout4{
+			overflow: hidden;
+			float: left;
+		}
+
+		#left4,#right4{
+        color: #f55;
+        background: #fcc;
+        width: 200px;
+        line-height: 26px;
+        text-align:center;
+        margin: 50px;
+    	}
+
+    	h2{
+			border-radius: 6px;
+			padding-left: 50px;
+			text-shadow: 2px 2px 3px #222222;
+    		background: url(http://pic002.cnblogs.com/images/2010/36987/2010092119181033.png) #5F5A4B no-repeat 1% 50%;
+    	}
+	</style>
+</head>
+<body>
+	<div class="main">
+		<h2>什么是BFC？</h1>
+		<p>&nbsp&nbsp&nbsp&nbspw3c规范中的BFC定义：浮动元素和绝对定位元素，非块级盒子的块级容器（例如 inline-blocks, table-cells, 和 table-captions），以及overflow值不为“visiable”的块级盒子，都会为他们的内容创建新的BFC（块级格式上下文）。在BFC中，盒子从顶端开始垂直地一个接一个地排列，两个盒子之间的垂直的间隙是由他们的margin值所决定的。在一个BFC中，两个相邻的块级盒子的垂直外边距会产生折叠。在BFC中，每一个盒子的左外边缘（margin-left）会触碰到容器的左边缘(border-left)（对于从右到左的格式来说，则触碰到右边缘）。<br>
+		&nbsp&nbsp&nbsp&nbsp首先BFC是一个名词，是一个独立的布局环境，我们可以理解为一个箱子（实际上是看不见摸不着的），箱子里面物品的摆放是不受外界的影响的。
+			<ul>
+			<h4>转换为BFC的理解则是：</h4>
+			<li>BFC中的元素的布局是不受外界的影响（我们往往利用这个特性来消除浮动元素对其非浮动的兄弟元素和其子元素带来的影响。）</li>
+			<li>在一个BFC中，块盒与行盒（行盒由一行中所有的内联元素所组成）都会垂直的沿着其父元素的边框排列。</li>
+			</ul>
+			
+		</p>
+		
+		<h2>BFC作用1：自适应两栏布局</h2>
+		
+		<textarea disabled="disabled">
+<style>
+    body {
+        width: 300px;
+        position: relative;
+    }
+ 
+    .aside {
+        width: 100px;
+        height: 150px;
+        float: left;
+        background: #f66;
+    }
+ 
+    .main {
+        height: 200px;
+        background: #fcc;
+    }
+</style>
+<body>
+    <div class="aside"></div>
+    <div class="main"></div>
+</body>
+		</textarea>
+		
+		<div id="layout1">
+			<div id="left1"></div>
+			<div id="right1"></div>
+		</div>
+	<p class="clear">&nbsp&nbsp&nbsp&nbsp可以看到：aside浮动后，其在根元素（根元素本身为BFC）下的兄弟元素main，在从左向右布局的过程中，与包含他们的box的border相接触。而这种布局不是我们想看到的，所以只要将main元素也变成BFC即可消除外界元素（对其本身和其子元素的布局）的干扰。修改的代码和效果如下。</p>
+	<textarea disabled="disabled">
+<style>
+    body {
+        width: 300px;
+        position: relative;
+    }
+ 
+    .aside {
+        width: 100px;
+        height: 150px;
+        float: left;
+        background: #f66;
+    }
+ 
+    .main {
+        height: 200px;
+        background: #fcc;
+        overflow: hidden;
+    }
+</style>
+<body>
+    <div class="aside"></div>
+    <div class="main"></div>
+</body>
+	</textarea>
+	<div id="layout2">
+			<div id="left2"></div>
+			<div id="right2"></div>
+	</div>
+
+	<h2 class="clear">BFC作用2：清除浮动，防止内部塌陷</h2>
+<textarea disabled="disabled">
+<style>
+    .parent {
+        border: 5px solid #fcc;
+        width: 300px;
+        overflow: hidden;
+    }
+ 
+    .child {
+        border: 5px solid #f66;
+        width:100px;
+        height: 100px;
+        float: left;
+    }
+</style>
+<body>
+    <div class="parent">
+        <div class="child"></div>
+        <div class="child"></div>
+    </div>
+</body>
+</textarea>
+	<div id ="layout3">
+		<div id ="left3"></div>
+        <div id ="right3"></div>
+	</div>
+	<p class="clear">&nbsp&nbsp&nbsp&nbsp为达到清除内部浮动，我们可以利用float或overflow触发parent生成BFC，那么parent在计算高度时，其内部的浮动元素child也会参与计算。如果parent不是BFC的话，已经float的child会在border外。关于清除浮动的另一种办法是利用clearfix和伪类after来实现，具体讨论放在<a href="clearfix.html">此处</a>。</p>
+
+
+
+	<h2 class="clear">BFC作用3：防止垂直 margin 重叠</h2>
+	
+<textarea disabled="disabeld">
+<style>
+    p {
+        color: #f55;
+        background: #fcc;
+        width: 200px;
+        line-height: 26px;
+        text-align:center;
+        margin: 50px;
+    }
+</style>
+<body>
+    <p>Hi</p>
+    <p>Hello</p>
+</body>
+</textarea>
+		<div id ="layout4">
+			<p id="left4">hi</p>
+			<p id="right4">hello</p>
+		</div>
+	<p class="clear">
+		&nbsp&nbsp&nbsp&nbsp
+		Box垂直方向的距离由margin决定。属于同一个BFC的两个相邻Box的margin会发生重叠。我们可以在p外面包裹一层容器，并触发该容器生成一个BFC。那么两个P便不属于同一个BFC，就不会发生margin重叠了。
+	</p>		
+
+		<h2>总结</h2>
+		<p>&nbsp&nbsp&nbsp&nbsp<strong>BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素。反之也如此。</strong>因为BFC内部的元素和外部的元素绝对不会互相影响，因此， 当BFC外部存在浮动时，它不应该影响BFC内部Box的布局，BFC会通过变窄，而不与浮动有重叠。同样的，当BFC内部有浮动时，为了不影响外部元素的布局，BFC计算高度时会包括浮动的高度。避免margin重叠也是这样的一个道理。</p>
+
+
+	</div>
+</body>
+</html>

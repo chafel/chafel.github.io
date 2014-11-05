@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>clearfix清除浮动</title>
+	<style>
+		p{
+			line-height: 30px; vertical-align: baseline;
+		}
+		*{
+			font-family: Helvetica;
+		}
+		.left{
+			float: left;
+			width: 500px;
+		}
+		textarea{
+			width:300px;
+			height: 100px;
+			
+		}
+		.cf{
+			border: 5px solid green;
+		}
+		.cf:after{
+    		content:"";
+    		display:table;
+    		clear:both;
+		}
+	</style>
+</head>
+<body>
+	<p>&nbsp&nbsp&nbsp&nbspNicolas Gallagher在他的博客<a href="http://nicolasgallagher.com/micro-clearfix-hack/">A new micro clearfix hack</a>中提供了一种更方便快捷的清除浮动方法。原文如下：
+	<blockquote>This “micro clearfix” generates pseudo-elements and sets their display to table. This creates an anonymous table-cell and a new block formatting context that means the :before pseudo-element prevents top-margin collapse. The :after pseudo-element is used to clear the floats. As a result, there is no need to hide any generated content and the total amount of code needed is reduced.<br>Including the :before selector is not necessary to clear the floats, but it prevents top-margins from collapsing in modern browsers.<ul>This has two benefits:<li>It ensures visual consistency with other float containment techniques that create a new block formatting context, e.g., overflow:hidden</li><li>It ensures visual consistency with IE 6/7 when zoom:1 is applied.</li></ul></blockquote></p>
+	
+	<div class="cf">
+	<div class="left">&nbsp&nbsp&nbsp&nbsp也就是用after来清除浮动，before来处理元素的margin-top与其第一个常规文档流的子元素的margin-top的重叠。代码如右所示。此处就运用了这种对浮动元素添加空的块级兄弟元素，再对其进行clear：both；来清除浮动。如果不这样处理的话，左边文字和右边代码将会跳出实线框，使父级元素的border塌陷。
+	</div>
+	<textarea disabled="disabled">
+		.cf:after{
+    		content:"";
+    		display:table;
+    		clear:both;
+		}
+	</textarea>
+	</div>
+</body>
+</html>
