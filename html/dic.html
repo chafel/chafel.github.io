@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>字典：一种数据结构</title>
+	<style type="text/css">
+		body{
+			display: absolute;
+			padding: 50px 300px 50px 200px;
+		}
+		p{
+			
+			line-height: 26px;
+			margin: 16px 0;
+			vertical-align: baseline;
+		}
+		textarea{
+			width: 600px;
+			height:60px;
+		}
+		#code{
+			height: 600px;
+		}
+	</style>
+	<script type="text/javascript" src="dic.js"></script>
+</head>
+<body>
+	<h2>字典</h2>
+	<p>记得一个面试题是这样的：两个单词A和B，长度相等且单词中字母出现次数相等的情况下称为类同。例如，applic和clipap是类同的。请编写程序判断两个单词是否类同。当时我的做法是两个单词分别跟自己比较，各字母出现次数记录在两个关联数组中，最后各数组中数字相比较，相同则意味着各字母出现次数相同。然后面试官问这个算法时间复杂度多少？O（n*n）。你怎么不用字典来实现呢？我恍然大悟！</p>
+	<p>字典是一种以键-值对形式存储数据的数据结构，JavaScript的Object类就是以字典形式设计的。先利用JS语言中Object类本身的特性来实现一个Dictionary类，但要知道的是Dictionary类的基础是Array类。而JS中一切皆对象，数组也是对象。这里这么说的原因是要实现Dictionary类中键的排序，而Object类中是不能对属性进行排序的。</p>
+	<p>下面的代码开始定义Dictionary类：</p>
+	<textarea>
+function Dictionary(){
+	this.datastore = new Array();
+}
+	</textarea>
+	<p>接下来定义add（）方法。该方法接受两个参数：键和值，键是值在字典中的索引。</p>
+	<textarea>
+function add(key,value){
+	this.datastore[key] = value;
+}
+	</textarea>
+	<p>下面定义find（）方法，该方法以键为参数，返回和其关联的值：</p>
+	<textarea>
+function find(key){
+	return this.datastore[key];
+}
+	</textarea>
+	<p>从字典中删除键-值对需要用到JS的一个内置函数delete，该函数是Object类的一部分。</p>
+	<textarea>
+function remove(key){
+	delete this.datastore[key];
+}
+	</textarea>
+	<p>显示和删除字典中所有键-值对需要用动用var in语句，也是Object类中的部分。</p>
+	<textarea>
+function showAll(){
+	for each (var key in this.keys(this.datastore)){ //为何用到each?
+		print (key + ":" + this.datastore[key]);
+		}
+}
+	</textarea>
+	<p>另外，我们希望看到一个有序的字典，那么现在为Dictionary类添加一个排序功能。当数组datastore拿到键后，调用sort（）方法对键重新进行排序。</p>
+	<textarea>
+function showAll(){
+	for each (var key in this.keys(this.datastore).sort()){ 
+		print (key + ":" + this.datastore[key]);
+	}
+}
+	</textarea>
+	<p>这样，我们就定义了一个Dictionary类吗，完整代码如下：</p>
+	<textarea disabled="disabled" id="code">
+function Dictionary(){
+	this.add = add;
+	this.datastore = new Array();
+	this.find = find;
+	this.remove = remove;
+	this.showAll = showAll;
+	this.count = count;
+	this.clear = clear;
+}
+
+function add(key,value){
+	this.datastore[key] = value;
+}
+
+function find(key){
+	return this.datastore[key];
+}
+
+function remove(key){
+	delete this.datastore[key];
+}
+
+function showAll(){
+	for each (var key in this.keys(this.datastore).sort()){ 
+		print (key + ":" + this.datastore[key]);
+	}
+}
+
+function count(){
+	var n=0;
+	for each (var key in this.keys(this.datastore)){
+		++n;
+	}
+	return n;
+}
+
+function clear(){
+	for each (var key in this.keys(this.datastore)){
+		delete this.datastore[key];
+	}
+}
+	</textarea>
+
+	<p><em>参考文献：《数据结构与算法JavaScript描述》Michael~McMillan著</em></p>
+</body>
+</html>

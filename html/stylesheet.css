@@ -1,0 +1,47 @@
+body{
+    position:absolute;
+    left: 25%;
+    right: 20%;
+    background-color: #e0e1eb;
+}
+.name{
+    width:130px;
+    display: inline-block;
+}
+.barInput {
+    width:40px; 
+    font-family:monospace;
+    font-size:25px;
+    height:30px;
+}
+
+.barHolder {
+    width:400px;
+    height:30px;
+    border-color:black;
+    border-style:solid;
+    border-width:1px;
+    display:inline-block;
+    margin-left:10px;
+}
+
+.bar {
+    height:100%;
+    background-color:#FF6342;
+    
+    -moz-border-top-right-radius:5px;
+         border-top-right-radius:5px;
+    -moz-border-bottom-right-radius:5px;
+         border-bottom-right-radius:5px;   
+}
+
+.bar:hover {
+    -webkit-box-shadow: 0px 0px 4px #FF6342;
+       -moz-box-shadow: 0px 0px 4px #FF6342;
+            box-shadow: 0px 0px 4px #FF6342; 
+    cursor:pointer;
+}
+#graphButton{
+    background-color: green;
+    height: 30px;
+}
