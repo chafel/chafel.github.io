@@ -11,10 +11,9 @@ html {
 	font-size: 10px;
 	background-color: #FDF5E6;
 	font-family: Helvetica;
-	background-image:url("../images/bg.png");
-    background-size: cover;
+	background-image:url("../images/bg.jpg");
     background-position: center center;  /* IE 6/7/8 */
-    background-repeat:repeat-y;
+    background-repeat:repeat;
     background-attachment: fixed;
 }
 
@@ -82,10 +81,12 @@ section.share, section.main{
 }
 
 header {
-	width: 80%;
-	margin: 80px auto 50px;
-	font-size: 5em;
+	width: 60%;
+	height: 10%;
+	margin: 20px auto;
+	font-size: 4em;
 	text-align: center;
+	color:red;
 }
 
 p:nth-child(2){
@@ -137,16 +138,20 @@ p:nth-child(4){
 	background-position: -25px -100px;
 }
 
-
-@media (max-width: 768px) {
+/*响应式适配。。。*/
+@media (max-width: 300px) {
   html {
-  	font-size: 7px;
+  	font-size: 3px;
   }
   #left,#right{
 	float: none;
+	width: 100%;
+	display: block;
 	opacity: 50%;
   }
 }
+/*响应式适配结束*/
+
 .title{
 	text-align: center;
 }
@@ -160,8 +165,8 @@ span{
 	display: inline-block;
 	width: 40%;
 	text-align:left;
-	color: blue;
-	border-radius: 5px;
+	color: #d58000;
+	border-radius: 15px;
 	padding: 0 20px;
 	border: 1px solid #913030;
 	float: left;
@@ -172,4 +177,14 @@ span{
 }
 .title1,.title2{
 	padding: 0;
+}
+
+.footer{
+	
+	position: absolute;
+	bottom: 10px;
+	width: 88%;
+	color:#d58000;
+	text-align: center;
+
 }

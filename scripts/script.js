@@ -8,10 +8,10 @@ $(document).ready(function(){
           height: '+=10px'
         });
        $("#right").mouseenter(function(){
-		      $(this).fadeTo("fast",1);
+		      $(this).fadeTo("fast",0.8);
        });
       $("#left").mouseenter(function(){
-          $(this).fadeTo("fast",1);
+          $(this).fadeTo("fast",0.8);
        });     
 	/*$("#right","#left").mouseenter(function(){
 		$(this).fadeTo("fast",0);
@@ -22,10 +22,10 @@ $(document).ready(function(){
            height: '-=10px'
        }); 
      $("#right").mouseleave(function(){
-		      $(this).fadeTo("fast",0);
+		      $(this).fadeTo("fast",0.2);
 	     });
 	    $("#left").mouseleave(function(){
-		      $(this).fadeTo("fast",0);
+		      $(this).fadeTo("fast",0.2);
 	     });     
    }); 
 });
