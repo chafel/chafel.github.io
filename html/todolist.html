@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ToDo</title>
+	<script type="text/javascript" src="../scripts/lib/jquery.min.js"></script>
+	<style type="text/css">
+		h2,h4,p {
+	    font-family:arial;
+		}
+
+		form {
+		    display: inline-block;
+		}
+
+		#button{
+		    display: inline-block;
+		    height:20px;
+			width:70px;
+			background-color:#cc0000;
+			font-family:arial;
+			font-weight:bold;
+			color:#ffffff;
+			border-radius: 5px;
+			text-align:center;
+			margin-top:2px;
+		}
+
+		.list {
+			font-family:garamond;
+			color:#cc0000;
+		}
+	</style>
+	<script type="text/javascript">
+		$(document).ready(function(){
+		$("#button").click(function(){
+		var toAdd=$("input[name=checkListItem]").val();
+
+		$(".list").append("<div class='item'>"+toAdd+"</div>");
+		});
+		$(document).on('click','.item',function(){
+		$(this).remove();
+		});
+		});
+	</script>
+</head>
+<body>
+	
+	<h2>To Do</h2>
+
+		<h4>输入列表，点击添加；单击对应项目即可消除</h4>
+		<form name="checkListForm">
+			<input type="text" name="checkListItem"/>
+		</form>
+		<div id="button">Add!</div>
+		<br/>
+		<div class="list"></div>
+		<p>可加入checkbox和删除按钮（删除后文字画线）等功能。。。</p>
+</body>
+</html>
