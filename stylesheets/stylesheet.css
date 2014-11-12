@@ -3,6 +3,7 @@
    -moz-box-sizing:    border-box;   /* Firefox 1, probably can drop this */
    -webkit-box-sizing: border-box;   /* Safari 3-4, also probably droppable */
     box-sizing:        border-box;   /* Everything else */
+    color:#d58000;
 }
 
 
@@ -80,14 +81,14 @@ section.share, section.main{
 	width: 100%;
 }
 
-header {
+/*header {
 	width: 60%;
 	height: 10%;
 	margin: 20px auto;
 	font-size: 4em;
 	text-align: center;
 	color:red;
-}
+}*/
 table{
 	padding:10%;
 }
@@ -164,8 +165,7 @@ a:hover{
   .clearfix{
   	padding-left: 32%;	
   }
-
-  
+ 
    ul{
 	padding-left: 0;
 	}
@@ -178,7 +178,7 @@ span.title1 , span.title2{
 	font-family: 黑体;
 	color:green;
 	background-color: gray;
-	font-size: 24px;
+	font-size: 16px;
 } 
 .hide span{
 	text-shadow:0 0 2px green;
@@ -209,11 +209,12 @@ span.title1 , span.title2{
 }
 
 .footer{
-	display:block;
+	/*display:block;
     position:absolute;
-	/*margin-top: 50px;*/
+	/*margin-top: 50px;
 	padding-left: 40%;
 	bottom: 1px;
-	color:#d58000;
-
+	color:#d58000;*/
+	text-align: center;
+	color: #d58000;
 }

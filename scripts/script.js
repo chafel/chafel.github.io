@@ -7,12 +7,14 @@ $(document).ready(function(){
        $(this).animate({
           height: '+=10px'
         });
+       
        $("#right").mouseenter(function(){
 		      $(this).fadeTo("fast",0.8);
        });
       $("#left").mouseenter(function(){
           $(this).fadeTo("fast",0.8);
-       });     
+       });  
+
 	/*$("#right","#left").mouseenter(function(){
 		$(this).fadeTo("fast",0);
 	});*/
