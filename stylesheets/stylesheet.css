@@ -88,6 +88,9 @@ header {
 	text-align: center;
 	color:red;
 }
+table{
+	padding:10%;
+}
 
 p:nth-child(2){
 	font-family: Verdana, sans-serif;
@@ -109,13 +112,21 @@ p:nth-child(4){
 	clear: both;
 	height: 0;
 }
-.clearfix { display: inline-table; }
+.clearfix { 
+	display: inline-block;
+	height: 40%;
+ }
 /* Hides from IE-mac \*/
  html .clearfix { height: 100%; }
 .clearfix { display: block; }
 /* End hide from IE-mac */
 /*clearfix*/
-
+a{
+	text-decoration: none;
+}
+a:hover{
+	color: green;
+}
 .share a{
 	display: inline-block;
 	background-image: url("../images/share.png");
@@ -139,26 +150,42 @@ p:nth-child(4){
 }
 
 /*响应式适配。。。*/
-@media (max-width: 300px) {
+@media (max-width: 760px) {
   html {
   	font-size: 3px;
   }
   #left,#right{
-	float: none;
-	width: 100%;
+	
+	width: :100%;
 	display: block;
-	opacity: 50%;
+	clear: both;
+	
   }
+  .clearfix{
+  	padding-left: 32%;	
+  }
+
+  
+   ul{
+	padding-left: 0;
+	}
+
 }
 /*响应式适配结束*/
 
-.title{
-	text-align: center;
+
+span.title1 , span.title2{
+	font-family: 黑体;
+	color:green;
+	background-color: gray;
+	font-size: 24px;
+} 
+.hide span{
+	text-shadow:0 0 2px green;
+	color: blue;
+	font-size: 24px;
 }
-span{
-	text-shadow:0 0 3px #FF0000;
-	color: yellow;
-}
+
 #left,#right{
 	background-color: #FDF5E6;
 	opacity: 0.85;
@@ -167,7 +194,7 @@ span{
 	text-align:left;
 	color: #d58000;
 	border-radius: 15px;
-	padding: 0 20px;
+	padding:  20px;
 	border: 1px solid #913030;
 	float: left;
 	margin: 0 5%;
@@ -175,16 +202,18 @@ span{
 #left ol {
 	padding-left: 20px;
 }
+
 .title1,.title2{
 	padding: 0;
+
 }
 
 .footer{
-	
-	position: absolute;
-	bottom: 10px;
-	width: 88%;
+	display:block;
+    position:absolute;
+	/*margin-top: 50px;*/
+	padding-left: 40%;
+	bottom: 1px;
 	color:#d58000;
-	text-align: center;
 
 }
