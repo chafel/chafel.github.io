@@ -51,13 +51,13 @@ body{
 .panel p{
     text-align:center;
 }
-.slide {
+/*.slide {
 	margin:0;
 	padding:0;
-}
+}*/
 .pull-me {
-	display:block;
-    position:relative;
+	
+    
     width:150px;
     height:20px;
     font-size:14px;
@@ -67,8 +67,9 @@ body{
     border-bottom-left-radius:5px;
     border-bottom-right-radius:5px;
 }
-.pull-me p {
+.slide  {
     text-align:center;
+    margin-bottom:100px;
 }
 
 section.site,section.main, section.share{
@@ -154,17 +155,36 @@ a:hover{
 @media (max-width: 760px) {
   html {
   	font-size: 3px;
+  	width:720px;
+  	height:auto;
   }
-  #left,#right{
+  #left{
 	
-	width: :100%;
+	
 	display: block;
+	
+	float: left;
 	clear: both;
 	
+	opacity: 1;
+	
+  }
+  #right{
+  	
+	display: block;
+	clear: both;
+	float: left;
+  	
+  	opacity: 1;
   }
   .clearfix{
-  	padding-left: 32%;	
+  	
+  	padding-left: 33%;
+  	position: relative;
+  	
+  	
   }
+  
  
    ul{
 	padding-left: 0;
@@ -178,7 +198,7 @@ span.title1 , span.title2{
 	font-family: 黑体;
 	color:green;
 	background-color: gray;
-	font-size: 16px;
+	font-size: 1.6em;
 } 
 .hide span{
 	text-shadow:0 0 2px green;
@@ -190,14 +210,14 @@ span.title1 , span.title2{
 	background-color: #FDF5E6;
 	opacity: 0.85;
 	display: inline-block;
-	width: 40%;
+	width: 45%;
 	text-align:left;
 	color: #d58000;
 	border-radius: 15px;
 	padding:  20px;
 	border: 1px solid #913030;
 	float: left;
-	margin: 0 5%;
+	margin:  2%;
 }
 #left ol {
 	padding-left: 20px;

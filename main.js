@@ -7,9 +7,9 @@ var purple = [280, 50, 60];
 
 var myName = "Hello, MVC!";
 var letterColors = [red, orange, green, blue, purple];
- var w=document.body.clientWidth;
+ 
 /*如何获取屏幕尺寸？
-
+var w=document.window.Width;
 if(w >=760px) {
     bubbleShape = 'square';
 }
