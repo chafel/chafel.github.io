@@ -2,25 +2,33 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="http://g.tbcdn.cn/thx/cube/1.2.1/??cube-min.css,type-min.css">
+	<!-- <link rel="stylesheet" type="text/css" href="http://g.tbcdn.cn/thx/cube/1.2.1/cube-min.css"> -->
 	<title>clearfix清除浮动</title>
 	<style>
-		p{
+		/*p{
 			line-height: 30px; vertical-align: baseline;
 		}
 		*{
 			font-family: Helvetica;
+		}*/
+		div.type{
+			width: 80%;height: auto;
 		}
+		p{font-size: 14px}
 		.left{
 			float: left;
 			width: 500px;
 		}
 		textarea{
-			width:300px;
+			width:35%;
 			height: 100px;
 			
 		}
 		.cf{
+			width: 80%;
 			border: 5px solid green;
+			margin:0 auto;
 		}
 		.cf:after{
     		content:"";
@@ -30,19 +38,61 @@
 	</style>
 </head>
 <body>
-	<p>&nbsp&nbsp&nbsp&nbspNicolas Gallagher在他的博客<a href="http://nicolasgallagher.com/micro-clearfix-hack/">A new micro clearfix hack</a>中提供了一种更方便快捷的清除浮动方法。原文如下：
+	<div class="type  center-box well">
+	<b class="center-hack"></b>
+    <div class="center-body">
+	<h2>清除浮动&nbsp;<b class="arrow arrow-bottom"></b></h2>
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;Nicolas Gallagher在他的博客<a href="http://nicolasgallagher.com/micro-clearfix-hack/">A new micro clearfix hack</a>中提供了一种更方便快捷的清除浮动方法。原文如下：
 	<blockquote>This “micro clearfix” generates pseudo-elements and sets their display to table. This creates an anonymous table-cell and a new block formatting context that means the :before pseudo-element prevents top-margin collapse. The :after pseudo-element is used to clear the floats. As a result, there is no need to hide any generated content and the total amount of code needed is reduced.<br>Including the :before selector is not necessary to clear the floats, but it prevents top-margins from collapsing in modern browsers.<ul>This has two benefits:<li>It ensures visual consistency with other float containment techniques that create a new block formatting context, e.g., overflow:hidden</li><li>It ensures visual consistency with IE 6/7 when zoom:1 is applied.</li></ul></blockquote></p>
 	
 	<div class="cf">
-	<div class="left">&nbsp&nbsp&nbsp&nbsp也就是用after来清除浮动，before来处理元素的margin-top与其第一个常规文档流的子元素的margin-top的重叠。代码如右所示。此处就运用了这种对浮动元素添加空的块级兄弟元素，再对其进行clear：both；来清除浮动。如果不这样处理的话，左边文字和右边代码将会跳出实线框，使父级元素的border塌陷。
+	<div class="left">&nbsp;&nbsp;&nbsp;&nbsp;也就是用after来清除浮动，before来处理元素的margin-top与其第一个常规文档流的子元素的margin-top的叠加。代码如右所示。此处就运用了这种对浮动元素添加空的块级兄弟元素，再对其进行clear：both；来清除浮动。如果不这样处理的话，左边文字和右边代码将会跳出实线框，使父级元素的border塌陷。
 	</div>
 	<textarea disabled="disabled">
-		.cf:after{
-    		content:"";
-    		display:table;
-    		clear:both;
-		}
+		/* For modern browsers */
+		.cf:before, .cf:after{content:"";display:table;}
+		.cf:after { clear:both; }
+		/* For IE 6/7 (trigger hasLayout) */
+		.cf { zoom:1; }
 	</textarea>
 	</div>
+	<br>
+		<h2>清除浮动加强版--2014.12.5更新&nbsp;<b class="arrow arrow-bottom"></b></h2>
+		<p>昨天晚上看到<a href="http://weibo.com/jieorlin#1417708171781">一丝冰凉前辈的微博</a>上提出了CSS后处理（<a href="http://yisibl.github.io/share/css-post-processor.html#/1">传送门</a>），我还没有用过前处理工具编译过CSS呢！震惊之余随手多点了几下，学到了很多新的东西。在此，附上几个干货链接：</p>
+		<ol>
+			<li><a href="https://github.com/yisibl/css-creating">CSS创作指南（Beta）</a></li>
+			<li><a href="http://www.iyunlu.com/view/css-xhtml/55.html">那些年我们一起清过的浮动</a></li>
+			<li><a href="http://www.zhihu.com/question/19588854">在 CSS 中，用 float 和 position 的区别是什么？</a></li>
+			<li><a href="http://www.zhihu.com/question/20979831">有哪些经常被误用的 HTML、JavaScript、CSS 的元素、方法和属性？</a></li>
+		</ol>
+		<p>在《那些年我们一起清过的浮动》中，作者给出了很多种清除浮动（闭合浮动）的方法，<i>我们发现其实更多的：display：table-cell，display：inline-block等只要触发了BFC的属性值都可以闭合浮动。从各个方面比较，after伪元素闭合浮动无疑是相对比较好的解决方案了，下面详细说说该方法。</i></p>
+		<!-- <img src="../images/yisibl.png"> -->
+		<blockquote>
+			需要注意的是 :after是伪元素（Pseudo-Element），不是伪类（某些CSS手册里面称之为“伪对象”），很多闭合浮动大全之类的文章都称之为伪类，不过csser要严谨一点，这是一种态度。<br>
+由于IE6-7不支持:after，使用 zoom:1触发 hasLayout。<br>
+该方法源自于: <a href="http://www.positioniseverything.net/easyclearing.html">How To Clear Floats Without Structural Markup</a><br>
+原文全部代码如下:<br>
+<textarea disabled="disabled">
+<style type="text/css">  .clearfix:after {  content: "."; display: block; height: 0; clear: both; visibility: hidden;  } 
+.clearfix {display: inline-block;}  /* for IE/Mac */ </style> <!--[if IE]> <style type="text/css"> .clearfix {zoom: 1;/* triggers hasLayout */  display: block;/* resets display for IE/Win */} </style>  <![endif]--> </textarea><br>
+鉴于 IE/Mac的市场占有率极低,我们直接忽略掉,最后精简的代码如下:<br>
+ .clearfix:after {content:"."; display:block; height:0; visibility:hidden; clear:both; }
+.clearfix { *zoom:1; }
+优点：结构和语义化完全正确,代码量居中<br>
+缺点：复用方式不当会造成代码量增加
+		</blockquote>
+		<p>.clearfix:after {content:"."; display:block; height:0; visibility:hidden; clear:both; }<br>
+.clearfix { *zoom:1; }<br>
+1) display:block 使生成的元素以块级元素显示,占满剩余空间;<br>
+2) height:0 避免生成内容破坏原有布局的高度。<br>
+3) visibility:hidden 使生成的内容不可见，并允许可能被生成内容盖住的内容可以进行点击和交互;<br>
+4）通过 content:"."生成内容作为最后一个元素，至于content里面是点还是其他都是可以的，例如oocss里面就有经典的content:"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",有些版本可能content 里面内容为空,一丝冰凉是不推荐这样做的,firefox直到7.0 content:”" 仍然会产生额外的空隙；<br>
+5）zoom：1 触发IE hasLayout。<br>
+通过分析发现，除了clear：both用来闭合浮动的，其他代码无非都是为了隐藏掉content生成的内容，这也就是其他版本的闭合浮动为什么会有font-size：0，line-height：0。</p>
+		<p>这是本文中对上面方框中左边文字的解释。<br><i>上面的方法用到了  ：before伪元素，很多人对这个有些迷惑，到底我什么时候需要用before呢？为什么方案一没有呢？其实它是用来处理margin边距重叠的，由于内部元素 float 创建了BFC，导致内部元素的margin-top和 上一个盒子的margin-bottom 发生叠加。如果这不是你所希望的，那么就可以加上before，如果只是单纯的闭合浮动，after就够了！</i></p>
+		<p>另外，<em>需要注意的是，display:table 本身并不会创建BFC，但是它会产生匿名框(anonymous boxes)，而匿名框中的display:table-cell可以创建新的BFC，换句话说，触发块级格式化上下文的是匿名框，而不是display:table。所以通过display:table和display:table-cell创建的BFC效果是不一样的。</em></p>
+<p><b>本页面引入了<a href="http://thx.github.io/cube/">Cube.css</a></b>.</p>
+</div>
+</div>	
 </body>
 </html>
