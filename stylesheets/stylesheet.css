@@ -23,7 +23,6 @@ body{
     text-align:center;
 }
 /*reset css end*/
-
 .site {
 
 }
@@ -69,7 +68,7 @@ body{
 }
 .slide  {
     text-align:center;
-    margin-bottom:100px;
+    margin-bottom:40px;
 }
 
 section.site,section.main, section.share{
@@ -197,7 +196,8 @@ a:hover{
 span.title1 , span.title2{
 	font-family: 黑体;
 	color:green;
-	background-color: gray;
+	/*background-color: gray;*/
+	/*border:15px solid transparent;*/
 	font-size: 1.6em;
 } 
 .hide span{
@@ -205,6 +205,24 @@ span.title1 , span.title2{
 	color: blue;
 	font-size: 24px;
 }
+/*border-image*/
+ul{
+	border:15px solid transparent;
+	-moz-border-image:url(../images/border.png) 30 30 round;	/* Old Firefox */
+	-webkit-border-image:url(../images/border.png) 30 30 round;	/* Safari and Chrome */
+	-o-border-image:url(../images/border.png) 30 30 round;		/* Opera */
+	border-image:url(../images/border.png) 30 30 round;
+}
+table{
+	border:15px solid transparent;
+	-moz-border-image:url(../images/border.png) 30 30 stretch;	/* Old Firefox */
+	-webkit-border-image:url(../images/border.png) 30 30 stretch;	/* Safari and Chrome */
+	-o-border-image:url(../images/border.png) 30 30 stretch;		/* Opera */
+	border-image:url(../images/border.png) 30 30 stretch;
+}
+
+tbody tr td{padding:5px 20px 5px 0;}
+tbody tr td a{text-decoration: underline;}
 
 #left,#right{
 	background-color: #FDF5E6;
@@ -213,7 +231,7 @@ span.title1 , span.title2{
 	width: 45%;
 	text-align:left;
 	color: #d58000;
-	border-radius: 15px;
+	border-radius: 20px;
 	padding:  20px;
 	border: 1px solid #913030;
 	float: left;
@@ -237,4 +255,60 @@ span.title1 , span.title2{
 	color:#d58000;*/
 	text-align: center;
 	color: #d58000;
+}
+/*标签切换*/
+ol li{
+	display: inline-block;
+	width: 30%;
+	text-align: center;
+	cursor: pointer;
+	border-bottom:5px dotted #ccc; 
+}
+ol li:first-child{border-bottom:none;}
+ul{display: none;}
+/*动画*/
+span#ani{
+	color: #000;
+	background:red;
+	position:relative;
+	animation:myfirst 5s infinite;
+	-moz-animation:myfirst 5s infinite; /* Firefox */
+	-webkit-animation:myfirst 5s infinite; /* Safari and Chrome */
+	-o-animation:myfirst 5s infinite; /* Opera */
+}
+
+@keyframes myfirst
+{
+0%   {background:red; left:0;}
+25%  {background:yellow; left:35%;}
+50%  {background:blue; left:70%; }
+75%  {background:green; left:30%; }
+100% {background:red; left:0;}
+}
+
+@-moz-keyframes myfirst /* Firefox */
+{
+0%   {background:red; left:0;}
+25%  {background:yellow; left:35%;}
+50%  {background:blue; left:70%; }
+75%  {background:green; left:30%; }
+100% {background:red; left:0;}
+}
+
+@-webkit-keyframes myfirst /* Safari and Chrome */
+{
+0%   {background:red; left:0;}
+25%  {background:yellow; left:35%;}
+50%  {background:blue; left:70%; }
+75%  {background:green; left:30%; }
+100% {background:red; left:0;}
+}
+
+@-o-keyframes myfirst /* Opera */
+{
+0%   {background:red; left:0;}
+25%  {background:yellow; left:35%;}
+50%  {background:blue; left:70%; }
+75%  {background:green; left:30%; }
+100% {background:red; left:0;}
 }
