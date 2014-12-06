@@ -13,7 +13,7 @@ function displayLocation(position){
 	div.innerHTML = "你的经度："+latitude+" 纬度："+longitude;
 }
 function displayErro(error){
-	var erroTypes = {
+	var errorTypes = {
 		0:"未知错误",
 		1:"用户未允许获取位置",
 		2:"位置请求不可用",
