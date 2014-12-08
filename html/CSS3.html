@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title>CSS3的一些展示</title>
+        <style type="text/css">
+                .grid{
+                        position: relative;
+                        margin: 0 auto;
+                        padding: 1em 0;
+                        max-width: 1000px;
+                }
+                .grid figure{
+                        float: left;
+                        margin: 10px 0;
+                        width: 48%;
+                        height: 360px;
+                        cursor: pointer;
+                        background-color: #18a367;
+                }
+                figure img{
+                        opacity: 0.7;
+                        -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+                        transition: opacity 0.35s, transform 0.35s;
+                        -webkit-transform: translate3d(-40px,0, 0);
+                        transform: translate3d(-40px,0,0);
+                }
+                figcaption{
+                        padding: 2em;
+                        text-transform: uppercase;
+                        font-family: 'Raleway', Arial, sans-serif;
+                        font-size: 1.5em;
+                        text-align: left;
+                        position: absolute;
+                        bottom: -270px;
+                        left: -40px;
+                        height: 100%;
+                }
+                figcaption div h2,figcaption div p{
+                        -webkit-transform: translate3d(0,40px,0);
+                        transform: translate3d(0,40px,0);
+                }
+                figcaption div h2{
+                        -webkit-transition: -webkit-transform 0.35s;
+                        transition: transform 0.35s;
+                }
+                figcaption div p{
+                        color: #fcc;
+                        opacity: 0;
+                        -webkit-transition: opacity 0.2s, -webkit-transform 0.35s;
+                        transition: opacity 0.2s, transform 0.35s;
+                }
+                figcaption:hover p,figure:hover img{
+                        opacity: 1;
+                }
+
+               figcaption:hover h2,figcaption:hover p{
+                        -webkit-transform: translate3d(0,0,0);
+                        transform: translate3d(0,0,0);
+                }
+                figcaption:hover p{
+                        -webkit-transition-delay: 0.05s;
+                        transition-delay: 0.05s;
+                        -webkit-transition-duration: 0.35s;
+                        transition-duration: 0.35s;
+                }
+                figure:hover img{
+                        -webkit-transform: translate3d(0,0,0);
+                        transform: translate3d(0,0,0);
+                }
+                figcaption span{
+                        font-weight: 800;
+                }
+
+                .des{
+                        float: left;
+                        margin-left: 20px;
+                        text-align: left;
+                        width: 48%;
+                        background-color: #18a367;
+                        font-family: 'Raleway', Arial, sans-serif;
+                        font-size: 1.5em;
+
+                }
+                .des span{
+                        background-color: gray;
+
+                }
+                .grid1{width: 1000px;margin: 0 auto;padding: 0 20px;}
+                .grid1 img{
+                        width: 960px;height:540px;
+                }
+                .grid1 img:last-child{
+                        transform:rotateX(150deg);
+                        -webkit-transform:rotateX(150deg); /* Safari and Chrome */
+                        -moz-transform:rotateX(150deg); /* Firefox */
+                }
+                .grid1 p{
+                        text-align: center; font-family: 'Raleway', Arial, sans-serif;background-color: #18a367;width: 960px;
+                }
+                .grid1 p span{background-color: gray}
+                .grid2{
+                        border:10px solid red;width: 1000px;margin: 0 auto;background-color: #18a367;padding: 30px 100px;
+                }
+                #outer{
+                        width:800px;border-top:1px solid red;margin-top: 10px;padding: 5px;
+                                border-bottom:1px solid red;
+                }
+                #inner{
+                        width:800px;border-left:1px solid red;margin-left: 32px;padding: 30px;margin-top: -30px;
+                                margin-bottom: -30px;
+                                border-right:1px solid red;/*padding-right: -30px;padding不能设为负值*/
+                }
+                #inner div{width: 90%;margin-right: -30px;}
+
+                .grid3{width: 1000px;margin: 10px auto;padding: 0;text-align: center; }
+                .grid3 p{font-family: 'Raleway', Arial, sans-serif;background-color: #18a367;}
+                .grid3 p span{background-color: gray}
+
+                *:before,*:after{
+                        display: none;
+                        box-sizing:border-box;
+                        -webkit-box-sizing:border-box;
+                }
+                .grid4:before,.grid4:after{
+                        content: "";
+                        opacity: 1;
+                        display: block;
+                }
+
+                .grid4{width: 1000px;margin: 10px auto;padding: 60px;text-align: center;background-color: #18a367;position: relative; }
+                .grid4 p{font-family: 'Raleway', Arial, sans-serif;width: 900px;margin:60px auto;}
+                .grid4:before{
+                        position: absolute;
+                        top:50px;right:30px;bottom: 50px;left:30px;
+                        border-top: 1px solid red;
+                        border-bottom: 1px solid red;
+                }
+                .grid4:after{
+                        position: absolute;
+                        top:30px;right:60px;bottom: 30px;left:60px;
+                        border-left: 1px solid red;
+                        border-right: 1px solid red;;
+                }
+                .grid4 p span{background-color: gray}
+        </style>
+</head>
+<body>
+       <div class="grid">
+               <figure class="effect">
+                       <img src="../images/wood1.png" alt="img4"/>
+                       <figcaption>
+                               <div>
+                                       <h2>Nice <span>Wood</span></h2>
+                                       <p>crayons and pencils</p>
+                               </div>
+                               <a href="#">View more</a>
+                       </figcaption>                        
+               </figure>
+                <p class="des">今天（2014.12.8）早上刷微博，看到HTML5中国分享了这个网站的<a href="http://www.html5tricks.com/demo/css3-image-mouse-hover/index.html">CSS3鼠标悬停图片动画,多种文字动画效果</a>。于是自己试着写了左边的效果图。使用了HTML5的<span>figure</span>和<span>figcaption</span>标签，当鼠标hover时，利用CSS3的<span>transition</span>属性改变opacity和设置动画（时长和延时），用<span>transform</span>属性的<span>translate3d(x,y,z)</span>值来实现图片和文字的平移效果。对比<a href="../index.html">我的主页</a>上JS实现的动画效果，更简单明了，更符合样式与逻辑分离的原则；但浏览器对HTML5以及CSS3的支持尚未普及，例如对<span>transform</span>的支持情况：Internet Explorer 10 和 Firefox 支持 3D 转换；Chrome 和 Safari 需要前缀 -webkit-；Opera 仍然不支持 3D 转换（它只支持 2D 转换）。这就导致这种写法扩展的局限性。</p>
+        </div> 
+        <div class="grid1">
+                <img src="../images/5.jpg" alt=""/>
+                <p>这是用<span>transform:rotateX(150deg);</span>做成的镜子，在IE和Opera里做不出来。</p>
+                <img src="../images/5.jpg" alt=""/>
+        </div>
+        <div class="grid2">
+                <div id="outer"><div id="inner"><div>Air travel has two advantages over train travel. First, it can save much time.We can fly from Beijing to Guangzhou jusi in two hours, but by train, we have to spend 24 hours or more. Second, air travel is more comfortable, because the plane flies so smoot qly that we can rest well during the trip, while the train is crowded sometimes and passengers have to sit for a long time, which makes them tired. But train travel also has its advantages. For example, traveling by train costs only 250 yuan while traveling by air will cost 900 yuan.Besides this, outside of the train's windows, we can enjoy the views of many big cities, such as Zhengzhou, Wuhan,ad Changsha.So I think different people like different ways of traveling.</div></div></div>    
+        </div>
+        <div class="grid3">
+                <img src="../images/yanshi.png">
+                <p>为了实现上图划线效果，设置div#inner为<span>margin-top: -30px;margin-bottom: -30px;</span>使div#outer盒子上下边界向里收缩，效果如上上图。但是div#inner的右border怎么能跟div#outer的上下border相交呢？</p>
+        </div>
+        </body>
+        <div class="grid4">
+                <p>哈哈！通过观察<a href="http://www.html5tricks.com/demo/css3-image-mouse-hover/index.html">演示网页</a>的代码，发现作者巧妙地利用了伪元素来完成这个效果。具体做法：将伪元素设为可见，绝对定位后分别对<span>:before</span>和<span>:after</span>设border。</p>
+        </div>
+</html>

@@ -236,6 +236,7 @@ tbody tr td a{text-decoration: underline;}
 	border: 1px solid #913030;
 	float: left;
 	margin:  2%;
+	position: relative;
 }
 #left ol {
 	padding-left: 20px;
@@ -311,4 +312,32 @@ span#ani{
 50%  {background:blue; left:70%; }
 75%  {background:green; left:30%; }
 100% {background:red; left:0;}
+}
+
+/*增加左右盒子动画*/
+table:before,
+table:after {
+	position: absolute;
+	top: 55%;
+	left: 80%;
+	width: 38%;
+	height: 2px;
+	background: red;
+	content: '';
+	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+	transition: opacity 0.35s, transform 0.35s;
+	-webkit-transform: translate3d(-50%,-50%,0);
+	transform: translate3d(-50%,-50%,0);
+}
+
+#right:hover table:before {
+	opacity: 0.5;
+	-webkit-transform: translate3d(-50%,-50%,0) rotate(45deg);
+	transform: translate3d(-50%,-50%,0) rotate(45deg);
+}
+
+#right:hover table:after {
+	opacity: 0.5;
+	-webkit-transform: translate3d(-50%,-50%,0) rotate(-45deg);
+	transform: translate3d(-50%,-50%,0) rotate(-42deg);
 }
