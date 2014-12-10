@@ -326,21 +326,16 @@ var green = [75, 100, 40];
 var blue = [196, 77, 55];
 var purple = [280, 50, 60];
 
-var myName = "Hello, MVC!";
+
 var letterColors = [red, orange, green, blue, purple];
  
-
-/*如何获取屏幕尺寸？
-var w=document.window.Width;
-if(w >=760px) {
-    bubbleShape = 'square';
-}
-else {
-    bubbleShape = 'circle';
-}*/
-bubbleShape = 'circle';
-drawName(myName, letterColors);
+// var myName = $("#name").value;
+var myName = "Hello, MVC!";
+var shape=$("#shape").value;
+bubbleShape = (shape=="squares")?'square':'circle';
+$("#preview").click(drawName(myName, letterColors));
 bounceBubbles();
+
 
 
 });

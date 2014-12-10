@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta property="wb:webmaster" content="28a21ead1b4e5eb6" />
+	<title>Canvas:tweetshirt</title>
+	<style>
+		*{font-weight: bold;}
+		canvas{border:1px solid black;}
+		body{width: 1000px;margin:0 auto;background-color: #495E69;}
+		span{float: right;margin-right: 200px;}
+	</style>
+	<script type="text/javascript">
+		window.onload = function(){
+			var button = document.getElementById("previewButton");
+			button.onclick = previewHandler;
+		};
+		function fillBackgroundColor(canvas,context){
+			var selectObj = document.getElementById("backgroundColor");
+			var index = selectObj.selectedIndex;
+			var bgColor = selectObj[index].value;
+			context.fillStyle = bgColor;
+			context.fillRect(0,0,canvas.width,canvas.height);
+		}
+		function previewHandler(){
+			var canvas = document.getElementById("tshirtCanvas");
+			var context = canvas.getContext("2d");
+			fillBackgroundColor(canvas,context);
+
+			var selectObj = document.getElementById("shape");
+			var index = selectObj.selectedIndex;
+			var shape = selectObj[index].value;
+
+			if(shape == "squares"){
+				for(i=0;i<20;i++){
+					drawSquare(canvas,context);
+				}
+			}else if(shape == "circles"){
+				for(i=0;i<20;i++){
+					drawCircle(canvas,context);
+				}
+			}else if(shape == "triangle"){
+				for(i=0;i<20;i++){
+					drawTriangle(canvas,context);
+				}
+			}else if(shape == "smileface"){
+				for(i=0;i<5;i++){
+					drawSmileyFace(canvas,context);
+				}
+			}else if(shape == "tryall"){
+				for(i=0;i<10;i++){
+					drawTriangle(canvas,context);
+					drawCircle(canvas,context);
+					drawSquare(canvas,context);
+				}
+				drawSmileyFace(canvas,context);
+			}
+		}
+		function drawSquare(canvas,context){
+			var w = Math.floor(Math.random()*40);
+			var x = Math.floor(Math.random()*canvas.width);
+			// 关于.width():http://www.css88.com/jqapi-1.9/width/
+			var y = Math.floor(Math.random()*canvas.height);
+
+			context.fillStyle = "lightblue";
+			context.fillRect(x,y,w,w);
+		}
+		function drawCircle(canvas,context){
+			var r = Math.floor(Math.random()*40);
+			var x = Math.floor(Math.random()*canvas.width);
+			var y = Math.floor(Math.random()*canvas.height);
+
+			context.beginPath();
+			context.arc(x,y,r,0,degreesToRadians(360),true);
+
+			context.fillStyle = "red";
+			context.fill();
+		}
+		function degreesToRadians(degree){
+			return (degree*Math.PI)/180;
+		}
+		function drawTriangle(canvas,context){
+			var a = Math.floor(Math.random()*canvas.width);
+			var b = Math.floor(Math.random()*canvas.height);
+			var c = Math.floor(Math.random()*canvas.width);
+			var d = Math.floor(Math.random()*canvas.height);
+			var x = Math.floor(Math.random()*canvas.width);
+			var y = Math.floor(Math.random()*canvas.height);
+			context.beginPath();
+			context.moveTo(a,b);
+			context.lineTo(c,d);
+			context.lineTo(x,y);
+			context.closePath();
+			context.lineWidth = 2;
+			context.stroke();//参考http://www.w3school.com.cn/tags/canvas_stroke.asp
+			context.fillStyle = "yellow";
+			context.fill();
+		}
+		function drawSmileyFace(canvas,context){
+			var x = Math.floor(Math.random()*canvas.width);
+			var y = Math.floor(Math.random()*canvas.height);
+			//圆脸
+			context.beginPath();
+			context.arc(x,y,60,0,degreesToRadians(360),true);
+			context.fillStyle="#FAAD20";
+			context.fill();
+			context.stroke();
+			//两只眼睛
+			context.beginPath();
+			context.arc(x-25,y-25,15,0,degreesToRadians(360),true);
+			context.fillStyle="#3385BA";
+			context.fill();
+			context.stroke();
+			context.beginPath();
+			context.arc(x+25,y-25,15,0,degreesToRadians(360),true);
+			context.fillStyle="#3385BA";
+			context.fill();
+			context.stroke();
+			// 嘴
+			context.beginPath();
+			context.arc(x,y,25,degreesToRadians(20),degreesToRadians(160),false);
+			context.stroke();
+			//鼻子
+			context.beginPath();
+			context.moveTo(x,y);
+			context.lineTo(x,y-15);
+			context.strokeStyle="green";
+			context.stroke();
+		}
+
+
+		
+
+		var selectObj = document.getElementById("foregroundColor");
+		var index = selectObj.selectedIndex;
+		var fgColor = selectObj[index].value;
+	</script>
+</head>
+<body>
+	<h1>TShirt图案</h1>
+	<canvas width="600"height="300"id="tshirtCanvas">
+		<p>你正在使用古代浏览器！Please upgrade your browser to use TweetShirt!</p><!-- 只有不支持canvas的浏览器会显示出这些文字 -->
+	</canvas>
+	<span>点击按钮开始绘图<br><i>三角形画的最丑了</i><br><i>使用Json调用微博API</i><br><i>能本地存储图像就最好了</i></span><!-- 此行验证canvas为行内元素 -->
+	<form>
+	<p>
+		<label for="backgroundColor">Select background color:</label>
+		<select id="backgroundColor">
+			<option value="white" selected="selected">White</option>
+			<option value="black">Black</option>
+		</select>
+	</p>
+	<p>
+		<label for="shape">Circles or squares?</label>
+		<select id="shape">
+			<option value="none" selected="selected">Neither</option>
+			<option value="circles">Circles</option>
+			<option value="squares">Squares</option>
+			<option value="triangle">Triangles</option>
+			<option value="smileface">Smiley Face</option>
+			<option value="tryall">Try All</option>
+		</select>
+	</p>
+	<p>
+		<label for="foregroundColor">Select text color:</label>
+		<select id="foregroundColor">
+			<option value="Black" selected="selected">Black</option>
+			<option value="White">White</option>
+		</select>
+	</p>
+	<p>
+		<label for="tweeets">Pick a tweet:</label>
+		<select name="" id="tweets"></select>
+	</p>
+	<p>
+		<input type="button" id="previewButton" value="Preview">
+	</p>
+	</form>
+
+</body>
+</html>
