@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:wb="http://open.weibo.com/wb">
 <head>
 	<meta charset="UTF-8">
 	<meta property="wb:webmaster" content="28a21ead1b4e5eb6" />
+	<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
 	<title>Canvas:tweetshirt</title>
 	<style>
 		*{font-weight: bold;}
@@ -141,7 +142,7 @@
 	<canvas width="600"height="300"id="tshirtCanvas">
 		<p>你正在使用古代浏览器！Please upgrade your browser to use TweetShirt!</p><!-- 只有不支持canvas的浏览器会显示出这些文字 -->
 	</canvas>
-	<span>点击按钮开始绘图<br><i>三角形画的最丑了</i><br><i>使用Json调用微博API</i><br><i>能本地存储图像就最好了</i></span><!-- 此行验证canvas为行内元素 -->
+	<span>点击按钮开始绘图<br><i>三角形画得最丑了</i><br><i>使用Json调用微博API</i><br><i>能本地存储图像就最好了</i></span><!-- 此行验证canvas为行内元素 -->
 	<form>
 	<p>
 		<label for="backgroundColor">Select background color:</label>
@@ -176,6 +177,6 @@
 		<input type="button" id="previewButton" value="Preview">
 	</p>
 	</form>
-
+	<wb:publish action="pubilish" type="web" language="zh_cn" button_type="red" button_size="big" button_text="发到微博秀一下" uid="1825990963" default_text="我在Chafel的网站（http://chafel.github.io/）上画了一张TShirt图案，你也来试试吧！" tag="Html5" refer="y" default_image="../images/749.png" appkey="5Sgs8u" ></wb:publish>
 </body>
 </html>
