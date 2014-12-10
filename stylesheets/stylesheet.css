@@ -10,12 +10,12 @@
 
 html {
 	font-size: 10px;
-	background-color: #FDF5E6;
+	background-color: rgb(15,99,30);
 	font-family: Helvetica;
-	background-image:url("../images/bg.jpg");
-    background-position: center center;  /* IE 6/7/8 */
+	/*background-image:url("../images/bg.jpg");
+    background-position: center center;*/  /* IE 6/7/8 
     background-repeat:repeat;
-    background-attachment: fixed;
+    background-attachment: fixed;*/
 }
 
 body{
@@ -149,50 +149,6 @@ a:hover{
 #weibo {
 	background-position: -25px -100px;
 }
-
-/*响应式适配。。。*/
-@media (max-width: 760px) {
-  html {
-  	font-size: 3px;
-  	width:720px;
-  	height:auto;
-  }
-  #left{
-	
-	
-	display: block;
-	
-	float: left;
-	clear: both;
-	
-	opacity: 1;
-	
-  }
-  #right{
-  	
-	display: block;
-	clear: both;
-	float: left;
-  	
-  	opacity: 1;
-  }
-  .clearfix{
-  	
-  	padding-left: 33%;
-  	position: relative;
-  	
-  	
-  }
-  
- 
-   ul{
-	padding-left: 0;
-	}
-
-}
-/*响应式适配结束*/
-
-
 span.title1 , span.title2{
 	font-family: 黑体;
 	color:green;
@@ -249,15 +205,17 @@ tbody tr td a{text-decoration: underline;}
 }
 
 .footer{
-	/*display:block;
+	
     position:absolute;
+    bottom: 0;
 	/*margin-top: 50px;
 	padding-left: 40%;
 	bottom: 1px;
 	color:#d58000;*/
-	text-align: center;
+	left: 40%;
 	color: #d58000;
 }
+
 /*标签切换*/
 ol li{
 	display: inline-block;
@@ -344,3 +302,52 @@ table:after {
 }
 
 iframe{position: absolute;bottom: 0;right: 0;opacity: 0.85;}
+
+/*响应式适配。。。*/
+@media (max-width: 760px) {
+  html {
+  	font-size: 0.8em;
+  	width:100%;
+  	margin: 0 auto;
+  }
+  #right,#left{
+  	border:none;
+  	border-radius: 0;
+	display: block;
+	clear: both;
+	float: left;
+  	width: 100%;
+  	opacity: 1;
+  	margin: 0;
+  }
+  #right{background-color: white;}
+  .clearfix{
+  	position: relative;
+  }
+  tbody tr td{
+  	padding: 0;
+  	padding-bottom: 3%;	
+  }
+  ul{
+	padding-left: 0;
+  }
+  table{
+  	width: 55%;
+  }
+  iframe{
+	display: none;
+  }
+  .footer{
+  	position: relative;
+  	left:0;
+  	background-color: #272822;
+  	margin: 0 auto;
+  }
+  .slide{
+  	background-color: white;
+  	width: 100%;
+  	margin-bottom: 0;
+  	height: 2%;
+  }
+}
+/*响应式适配结束*/

@@ -5,15 +5,15 @@ $(document).ready(function(){
   });
   /*左右动画及透明*/
   $(".clearfix").mouseenter(function() {
-       $(this).animate({
-          height: '+=10px'
-        });
+       // $(this).animate({
+       //    height: '+=10px'
+       //  });
        
        $("#right").mouseenter(function(){
-		      $(this).fadeTo("fast",0.8);
+		      $(this).fadeTo("fast",0.9);
        });
       $("#left").mouseenter(function(){
-          $(this).fadeTo("fast",0.8);
+          $(this).fadeTo("fast",0.9);
        });  
 
 	/*$("#right","#left").mouseenter(function(){
@@ -21,14 +21,14 @@ $(document).ready(function(){
 	});*/
   });
    $(".clearfix").mouseleave(function() {
-      $(this).animate({
-           height: '-=10px'
-       }); 
+      // $(this).animate({
+      //      height: '-=10px'
+      //  }); 
      $("#right").mouseleave(function(){
-		      $(this).fadeTo("fast",0.2);
+		      $(this).fadeTo("fast",0.6);
 	     });
 	    $("#left").mouseleave(function(){
-		      $(this).fadeTo("fast",0.2);
+		      $(this).fadeTo("fast",0.6);
 	     });     
   }); 
   /*左边标签页切换*/  

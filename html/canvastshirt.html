@@ -9,13 +9,20 @@
 		*{font-weight: bold;}
 		canvas{border:1px solid black;}
 		body{width: 1000px;margin:0 auto;background-color: #495E69;}
-		span{float: right;margin-right: 200px;}
+		span{float: right;}
 	</style>
 	<script type="text/javascript">
 		window.onload = function(){
 			var button = document.getElementById("previewButton");
 			button.onclick = previewHandler;
+			makeImage();
 		};
+		function makeImage(){
+			var canvas = document.getElementById("tshirtCanvas");
+			canvas.onclick = function(){
+				window.location = canvas.toDataURL("../images/png");
+			};
+		}
 		function fillBackgroundColor(canvas,context){
 			var selectObj = document.getElementById("backgroundColor");
 			var index = selectObj.selectedIndex;
@@ -56,6 +63,8 @@
 				}
 				drawSmileyFace(canvas,context);
 			}
+
+			drawText(canvas,context);
 		}
 		function drawSquare(canvas,context){
 			var w = Math.floor(Math.random()*40);
@@ -129,12 +138,17 @@
 			context.stroke();
 		}
 
+		function drawText(canvas,context){
+			var selectObj = document.getElementById("foregroundColor");
+			var index = selectObj.selectedIndex;
+			var fgColor = selectObj[index].value;
 
-		
-
-		var selectObj = document.getElementById("foregroundColor");
-		var index = selectObj.selectedIndex;
-		var fgColor = selectObj[index].value;
+			if(fgColor == "White"){
+				context.fillStyle = "green";
+				context.font = "italic 30px serif";
+				context.fillText("Screw those bitches!",160,180);
+			}
+		}
 	</script>
 </head>
 <body>
@@ -142,7 +156,7 @@
 	<canvas width="600"height="300"id="tshirtCanvas">
 		<p>你正在使用古代浏览器！Please upgrade your browser to use TweetShirt!</p><!-- 只有不支持canvas的浏览器会显示出这些文字 -->
 	</canvas>
-	<span>点击按钮开始绘图<br><i>三角形画得最丑了</i><br><i>使用Json调用微博API</i><br><i>能本地存储图像就最好了</i></span><!-- 此行验证canvas为行内元素 -->
+	<span>点击按钮开始绘图<br>左键点击绘制好的图片可另存<i>canvas.toDataURL();就能本地存储图像挺好的</i><br><i>三角形画得最丑了</i><br><i>本应该使用Json调用TweeterAPI的<br>然后绘制一条推特到图像上</i></span><!-- <br><i>此行验证canvas为行内元素</i> -->
 	<form>
 	<p>
 		<label for="backgroundColor">Select background color:</label>
@@ -163,16 +177,16 @@
 		</select>
 	</p>
 	<p>
-		<label for="foregroundColor">Select text color:</label>
+		<label for="foregroundColor">Screw those bitches?</label>
 		<select id="foregroundColor">
-			<option value="Black" selected="selected">Black</option>
-			<option value="White">White</option>
+			<option value="Black" selected="selected">No</option>
+			<option value="White">Yes</option>
 		</select>
 	</p>
-	<p>
+	<!-- <p>
 		<label for="tweeets">Pick a tweet:</label>
 		<select name="" id="tweets"></select>
-	</p>
+	</p> -->
 	<p>
 		<input type="button" id="previewButton" value="Preview">
 	</p>
