@@ -10,7 +10,7 @@
 
 html {
 	font-size: 10px;
-	background-color: rgb(15,99,30);
+	background-color: #9c9;
 	font-family: Helvetica;
 	/*background-image:url("../images/bg.jpg");
     background-position: center center;*/  /* IE 6/7/8 
@@ -346,7 +346,7 @@ iframe{position: absolute;bottom: 0;right: 0;opacity: 0.85;}
   .slide{
   	background-color: white;
   	width: 100%;
-  	margin-bottom: 0;
+  	margin: 0;
   	height: 2%;
   }
 }
