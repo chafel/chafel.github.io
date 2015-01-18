@@ -5,32 +5,22 @@
     box-sizing:        border-box;   /* Everything else */
     color:#d58000;
 }
-
-
-
 html {
-	font-size: 10px;
-	background-color: #9c9;
+	font-size: 12px;
 	font-family: Helvetica;
-	/*background-image:url("../images/bg.jpg");
-    background-position: center center;*/  /* IE 6/7/8 
-    background-repeat:repeat;
-    background-attachment: fixed;*/
 }
-
 body{
     font-size: 1.6em;
     text-align:center;
+    background: url(../images/bg-grid.png) repeat scroll 0 0 transparent;
 }
 /*reset css end*/
 .site {
-
+	min-height: 500px;
 }
-
 .main {
 	clear: both;
 }
-
 .panel,.hide,.slide,.pull-me{
 	margin:0 auto;
     padding:0;
@@ -55,8 +45,6 @@ body{
 	padding:0;
 }*/
 .pull-me {
-	
-    
     width:150px;
     height:20px;
     font-size:14px;
@@ -70,17 +58,14 @@ body{
     text-align:center;
     margin-bottom:40px;
 }
-
 section.site,section.main, section.share{
 	width: 90%;
 	margin: 0 auto;
 	text-align: center;
 }
-
 section.share, section.main{
 	width: 100%;
 }
-
 /*header {
 	width: 60%;
 	height: 10%;
@@ -92,11 +77,9 @@ section.share, section.main{
 /*table{
 	padding:10px;
 }*/
-
 p:nth-child(2){
 	font-family: Verdana, sans-serif;
 }
-
 p:nth-child(3){
 	font-family: cursive;
 	color:#cc0000;
@@ -137,7 +120,6 @@ a:hover{
 	height: 24px;
 	margin-left: 5px;
 }
-
 #douban {
 	background-position: -50px -70px;
 }
@@ -145,7 +127,6 @@ a:hover{
 #qqzone {
 	background-position: 0 -70px;
 }
-
 #weibo {
 	background-position: -25px -100px;
 }
@@ -169,19 +150,17 @@ ul{
 	-o-border-image:url(../images/border.png) 30 30 round;		/* Opera */
 	border-image:url(../images/border.png) 30 30 round;
 }
-table{
+/*table{
 	border:15px solid transparent;
-	-moz-border-image:url(../images/border.png) 30 30 stretch;	/* Old Firefox */
-	-webkit-border-image:url(../images/border.png) 30 30 stretch;	/* Safari and Chrome */
-	-o-border-image:url(../images/border.png) 30 30 stretch;		/* Opera */
 	border-image:url(../images/border.png) 30 30 stretch;
-}
-
+	-moz-border-image:url(../images/border.png) 30 30 stretch;	 Old Firefox 
+	-webkit-border-image:url(../images/border.png) 30 30 stretch;	/* Safari and Chrome */
+	/*(-o-border-image:url(../images/border.png) 30 30 stretch )	/* Opera */
+/*}*/
 tbody tr td{padding:5px 10px 5px 0;}
 tbody tr td a{text-decoration: underline;}
-
 #left,#right{
-	background-color: #FDF5E6;
+	background-color: rgba(204,204,204,0.3);
 	opacity: 0.85;
 	display: inline-block;
 	width: 35%;
@@ -193,29 +172,24 @@ tbody tr td a{text-decoration: underline;}
 	float: left;
 	margin:  2%;
 	position: relative;
+	/*background: url(../images/diagonal-bg.png) repeat scroll 0 0 transparent;*/
 }
 #right{width:30%;height:240px; }
 #left ol {
 	padding-left: 20px;
 }
-
 .title1,.title2{
 	padding: 0;
-
 }
-
-.footer{
-	
-    position:absolute;
-    bottom: 0;
-	/*margin-top: 50px;
-	padding-left: 40%;
-	bottom: 1px;
-	color:#d58000;*/
-	left: 40%;
+footer{
+	width:300px;
+	margin:0 auto;
+	text-align: center;
 	color: #d58000;
 }
-
+.footer p{
+	margin-bottom: 0!important;
+}
 /*标签切换*/
 ol li{
 	display: inline-block;
@@ -344,7 +318,7 @@ iframe{position: absolute;bottom: 0;right: 0;opacity: 0.85;}
   	margin: 0 auto;
   }
   .slide{
-  	background-color: white;
+  	background-color: #FDF5E6;
   	width: 100%;
   	margin: 0;
   	height: 2%;
