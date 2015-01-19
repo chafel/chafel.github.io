@@ -163,3 +163,10 @@ function resizeToWindow(){
 	rowData = ctx.createImageData(canvas.width,1);
 	startWorkers();
 }
+
+function processWork(worker,workerResults){
+	if(workerResults.generation == generation){
+		drawRow(workerResults);
+	}
+	reassignWorker(worker);
+}

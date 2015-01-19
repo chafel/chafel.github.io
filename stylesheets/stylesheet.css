@@ -33,9 +33,10 @@ body{
 }
 .panel {
 	background: #ffffbd;
-    padding-top: 69px;
-    height:150px;
+    padding-top: 25px;
+    height:100px;
 	display:none;
+	border-radius: 0 0 10px 10px;
 }
 .panel p{
     text-align:center;

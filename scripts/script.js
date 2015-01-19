@@ -2,6 +2,7 @@ $(document).ready(function(){
 	/*首部下拉*/
   $(".pull-me").click(function(){
     $(".panel").slideToggle("fast");
+    $("p.hide").toggleClass("hide");
   });
   /*左右动画及透明*/
   $(".clearfix").mouseenter(function() {
