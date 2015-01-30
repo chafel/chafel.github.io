@@ -297,6 +297,11 @@ iframe{position: absolute;bottom: 0;right: 0;opacity: 0.85;}
   	margin: 0;
   }
   #right{background-color: white;}
+  #right table{
+  	width:110%;
+  	margin: 30px auto;
+  }
+  table:before,table:after{display: none;}
   .clearfix{
   	position: relative;
   }
@@ -306,9 +311,6 @@ iframe{position: absolute;bottom: 0;right: 0;opacity: 0.85;}
   }
   ul{
 	padding-left: 0;
-  }
-  table{
-  	width: 55%;
   }
   iframe{
 	display: none;
