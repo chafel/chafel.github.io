@@ -13,6 +13,7 @@ body{
     font-size: 1.6em;
     text-align:center;
     background: url(../images/bg-grid.png) repeat scroll 0 0 transparent;
+    background-color: rgb(204,204,204) ;
 }
 /*reset css end*/
 .site {
@@ -161,7 +162,7 @@ ul{
 tbody tr td{padding:5px 10px 5px 0;}
 tbody tr td a{text-decoration: underline;}
 #left,#right{
-	background-color: rgba(204,204,204,0.3);
+	background-color:#FFF;
 	opacity: 0.85;
 	display: inline-block;
 	width: 35%;
@@ -169,14 +170,15 @@ tbody tr td a{text-decoration: underline;}
 	color: #d58000;
 	border-radius: 20px;
 	padding:  20px;
-	border: 5px dotted gray;
+	border: 12px dotted rgb(204,204,204);
 	float: left;
 	margin:  2%;
 	position: relative;
 	overflow: hidden;
 	/*background: url(../images/diagonal-bg.png) repeat scroll 0 0 transparent;*/
 }
-#right{width:30%;height:240px; }
+#right{width:30%;height:240px; background-color: lightblue}
+#right table{margin-top: 30px}
 #left ol {
 	padding-left: 0px;
 }
@@ -257,7 +259,7 @@ table:after {
 	left: 80%;
 	width: 38%;
 	height: 2px;
-	background: red;
+	background: blue;
 	content: '';
 	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
 	transition: opacity 0.35s, transform 0.35s;
@@ -295,8 +297,13 @@ iframe{position: absolute;bottom: 0;right: 0;opacity: 0.85;}
   	width: 100%;
   	opacity: 1;
   	margin: 0;
+  	text-align: left;
   }
-  #right{background-color: white;}
+  #left ul{
+  	list-style: none;
+  	padding-left: 30px
+  }
+  #right{background-color: white;text-align: center;}
   #right table{
   	width:110%;
   	margin: 30px auto;
