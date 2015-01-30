@@ -169,7 +169,7 @@ tbody tr td a{text-decoration: underline;}
 	color: #d58000;
 	border-radius: 20px;
 	padding:  20px;
-	border: 1px solid #913030;
+	border: 5px dotted gray;
 	float: left;
 	margin:  2%;
 	position: relative;
@@ -215,40 +215,40 @@ span#ani{
 @keyframes myfirst
 {
 0%   {background:red; left:0;}
-25%  {background:yellow; left:35%;}
-50%  {background:blue; left:60%; }
-75%  {background:green; left:30%; }
+25%  {background:yellow; left:100px;}
+50%  {background:blue; left:200px; }
+75%  {background:green; left:100px; }
 100% {background:red; left:0;}
 }
 
 @-moz-keyframes myfirst /* Firefox */
 {
 0%   {background:red; left:0;}
-25%  {background:yellow; left:35%;}
-50%  {background:blue; left:60%; }
-75%  {background:green; left:30%; }
+25%  {background:yellow; left:100px;}
+50%  {background:blue; left:200px; }
+75%  {background:green; left:100px; }
 100% {background:red; left:0;}
 }
 
 @-webkit-keyframes myfirst /* Safari and Chrome */
 {
 0%   {background:red; left:0;}
-25%  {background:yellow; left:35%;}
-50%  {background:blue; left:60%; }
-75%  {background:green; left:30%; }
+25%  {background:yellow; left:100px;}
+50%  {background:blue; left:200px; }
+75%  {background:green; left:100px; }
 100% {background:red; left:0;}
 }
 
 @-o-keyframes myfirst /* Opera */
 {
 0%   {background:red; left:0;}
-25%  {background:yellow; left:35%;}
-50%  {background:blue; left:60%; }
-75%  {background:green; left:30%; }
+25%  {background:yellow; left:100px;}
+50%  {background:blue; left:200px; }
+75%  {background:green; left:100px; }
 100% {background:red; left:0;}
 }
 
-/*增加左右盒子动画*/
+/*增加右盒子动画*/
 table:before,
 table:after {
 	position: absolute;
