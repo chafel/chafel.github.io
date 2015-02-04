@@ -11,10 +11,10 @@ $(document).ready(function(){
        //  });
        
        $("#right").mouseenter(function(){
-		      $(this).fadeTo("fast",0.9);
+		      $(this).fadeTo("fast",0.99);
        });
       $("#left").mouseenter(function(){
-          $(this).fadeTo("fast",0.9);
+          $(this).fadeTo("fast",0.99);
        });  
 
 	/*$("#right","#left").mouseenter(function(){
@@ -26,18 +26,18 @@ $(document).ready(function(){
       //      height: '-=10px'
       //  }); 
      $("#right").mouseleave(function(){
-		      $(this).fadeTo("fast",0.6);
+		      $(this).fadeTo("fast",0.5);
 	     });
 	    $("#left").mouseleave(function(){
-		      $(this).fadeTo("fast",0.6);
+		      $(this).fadeTo("fast",0.5);
 	     });     
   }); 
   /*左边标签页切换*/  
     $("#css").css("display","block");
     $("#left ol li").click(function(){
         var a=$(this).index();
-        $("#left ol li").css("border-bottom","5px dotted #ccc");
-        $(this).css("border-bottom","none");
+        $("#left ol li").css("border-bottom","5px solid #ccc");
+        $(this).css("border-bottom-color","transparent");
         
         $("#left ul").hide();
         $("#left ul").eq(a).show();

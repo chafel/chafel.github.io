@@ -197,7 +197,7 @@ ol li{
 	width: 30%;
 	text-align: center;
 	cursor: pointer;
-	border-bottom:5px dotted #ccc; 
+	border-bottom:5px solid #ccc; 
 }
 ol li:first-child{border-bottom:none;}
 ul{display: none;}
