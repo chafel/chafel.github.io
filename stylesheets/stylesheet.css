@@ -13,6 +13,7 @@ body{
     font-size: 1.6em;
     text-align:center;
     background: url(../images/bg-grid.png) repeat scroll 0 0 transparent;
+    background-color: rgb(204,204,204) ;
 }
 /*reset css end*/
 .site {
@@ -161,7 +162,7 @@ ul{
 tbody tr td{padding:5px 10px 5px 0;}
 tbody tr td a{text-decoration: underline;}
 #left,#right{
-	background-color: rgba(204,204,204,0.3);
+	background-color:#FFF;
 	opacity: 0.85;
 	display: inline-block;
 	width: 35%;
@@ -169,15 +170,17 @@ tbody tr td a{text-decoration: underline;}
 	color: #d58000;
 	border-radius: 20px;
 	padding:  20px;
-	border: 1px solid #913030;
+	border: 12px dotted rgb(204,204,204);
 	float: left;
 	margin:  2%;
 	position: relative;
+	overflow: hidden;
 	/*background: url(../images/diagonal-bg.png) repeat scroll 0 0 transparent;*/
 }
-#right{width:30%;height:240px; }
+#right{width:30%;height:240px; background-color: lightblue}
+#right table{margin-top: 30px}
 #left ol {
-	padding-left: 20px;
+	padding-left: 0px;
 }
 .title1,.title2{
 	padding: 0;
@@ -215,40 +218,40 @@ span#ani{
 @keyframes myfirst
 {
 0%   {background:red; left:0;}
-25%  {background:yellow; left:35%;}
-50%  {background:blue; left:60%; }
-75%  {background:green; left:30%; }
+25%  {background:yellow; left:100px;}
+50%  {background:blue; left:200px; }
+75%  {background:green; left:100px; }
 100% {background:red; left:0;}
 }
 
 @-moz-keyframes myfirst /* Firefox */
 {
 0%   {background:red; left:0;}
-25%  {background:yellow; left:35%;}
-50%  {background:blue; left:60%; }
-75%  {background:green; left:30%; }
+25%  {background:yellow; left:100px;}
+50%  {background:blue; left:200px; }
+75%  {background:green; left:100px; }
 100% {background:red; left:0;}
 }
 
 @-webkit-keyframes myfirst /* Safari and Chrome */
 {
 0%   {background:red; left:0;}
-25%  {background:yellow; left:35%;}
-50%  {background:blue; left:60%; }
-75%  {background:green; left:30%; }
+25%  {background:yellow; left:100px;}
+50%  {background:blue; left:200px; }
+75%  {background:green; left:100px; }
 100% {background:red; left:0;}
 }
 
 @-o-keyframes myfirst /* Opera */
 {
 0%   {background:red; left:0;}
-25%  {background:yellow; left:35%;}
-50%  {background:blue; left:60%; }
-75%  {background:green; left:30%; }
+25%  {background:yellow; left:100px;}
+50%  {background:blue; left:200px; }
+75%  {background:green; left:100px; }
 100% {background:red; left:0;}
 }
 
-/*增加左右盒子动画*/
+/*增加右盒子动画*/
 table:before,
 table:after {
 	position: absolute;
@@ -256,7 +259,7 @@ table:after {
 	left: 80%;
 	width: 38%;
 	height: 2px;
-	background: red;
+	background: blue;
 	content: '';
 	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
 	transition: opacity 0.35s, transform 0.35s;
@@ -294,8 +297,18 @@ iframe{position: absolute;bottom: 0;right: 0;opacity: 0.85;}
   	width: 100%;
   	opacity: 1;
   	margin: 0;
+  	text-align: left;
   }
-  #right{background-color: white;}
+  #left ul{
+  	list-style: none;
+  	padding-left: 30px
+  }
+  #right{background-color: white;text-align: center;}
+  #right table{
+  	width:110%;
+  	margin: 30px auto;
+  }
+  table:before,table:after{display: none;}
   .clearfix{
   	position: relative;
   }
@@ -305,9 +318,6 @@ iframe{position: absolute;bottom: 0;right: 0;opacity: 0.85;}
   }
   ul{
 	padding-left: 0;
-  }
-  table{
-  	width: 55%;
   }
   iframe{
 	display: none;
