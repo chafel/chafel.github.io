@@ -177,7 +177,7 @@ tbody tr td a{text-decoration: underline;}
 	overflow: hidden;
 	/*background: url(../images/diagonal-bg.png) repeat scroll 0 0 transparent;*/
 }
-#right{width:30%;height:240px; background-color: lightblue}
+#right{width:30%;height:240px; background-color: lightgreen}
 #right table{margin-top: 30px}
 #left ol {
 	padding-left: 0px;
@@ -336,3 +336,29 @@ iframe{position: absolute;bottom: 0;right: 0;opacity: 0.85;}
   }
 }
 /*响应式适配结束*/
+/*codecademy图片区*/
+#codeImg{
+    position: absolute;
+    top:310px;
+    left:40%;
+    border: 2px solid rgb(133,153,133);
+    padding-top:5px;
+    z-index: 9999;
+    background-color: #fff;
+    display: none;
+}
+#codeImg p{
+    position: relative;  
+}
+.span1{
+    position: absolute;
+    top:-20px;
+    left:240px;
+    color: rgb(133,153,133);
+}
+.span2{
+    position: absolute;
+    top:-17px;
+    left:240px;
+    color:#fff;
+}

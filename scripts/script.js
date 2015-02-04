@@ -42,4 +42,18 @@ $(document).ready(function(){
         $("#left ul").hide();
         $("#left ul").eq(a).show();
     });
+  // 显示Codecademy图片
+  // var width=$(window).width();
+  //$(window).resize(function(){});检测窗口变化
+  $("#codeInfo").hover(function(e) {
+    if(e.pageX>650){
+      $("#codeImg").css('display', 'block');
+    }else{
+      $("#codeImg img").replaceWith('<p>为保障浏览效果，仅能在大屏设备下查看</p>');
+      $("#codeImg").css({'display':'block',"top":"630px"});
+    }
+    
+  }, function() {
+    $("#codeImg").css('display', 'none');
+  });
 });
