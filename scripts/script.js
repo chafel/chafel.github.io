@@ -43,17 +43,28 @@ $(document).ready(function(){
         $("#left ul").eq(a).show();
     });
   // 显示Codecademy图片
-  // var width=$(window).width();
-  //$(window).resize(function(){});检测窗口变化
   $("#codeInfo").hover(function(e) {
     if(e.pageX>650){
       $("#codeImg").css('display', 'block');
     }else{
-      $("#codeImg img").replaceWith('<p>为保障浏览效果，仅能在大屏设备下查看</p>');
-      $("#codeImg").css({'display':'block',"top":"630px"});
+      $("#codeInfo").attr('href', 'http://www.codecademy.com');
+      $("#codeImg").css('display','none');
     }
     
   }, function() {
     $("#codeImg").css('display', 'none');
   });
+  //检测窗口变化
+  var sinaChange=function(){
+    var width=$(window).width();
+    var sinaWidget='<iframe width="350" height="600" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=1&ptype=1&speed=0&skin=1&isTitle=1&noborder=1&isWeibo=1&isFans=1&uid=1825990963&verifier=c03fa372&dpc=1"></iframe>';
+
+    if(width>768){
+      $("body").append(sinaWidget);
+    }else{
+      $("iframe").remove();  
+    }
+  };
+  sinaChange();
+  $(window).resize(sinaChange);
 });

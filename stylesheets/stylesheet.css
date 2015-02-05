@@ -319,9 +319,6 @@ iframe{position: absolute;bottom: 0;right: 0;opacity: 0.85;}
   ul{
 	padding-left: 0;
   }
-  iframe{
-	display: none;
-  }
   .footer{
   	position: relative;
   	left:0;
