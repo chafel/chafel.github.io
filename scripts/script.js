@@ -1,5 +1,4 @@
 $(document).ready(function(){
-	confirm("已针对小屏幕优化，可缩小窗口查看变化！")
   /*首部下拉*/
   $(".pull-me").click(function(){
     $(".panel").slideToggle("fast");
