@@ -175,7 +175,7 @@ tbody tr td a{text-decoration: underline;}
 	margin:  2%;
 	position: relative;
 	overflow: hidden;
-	/*background: url(../images/diagonal-bg.png) repeat scroll 0 0 transparent;*/
+	background: url(../images/diagonal-bg.png) repeat scroll 0 0 transparent;
 }
 #right{width:30%;height:240px; background-color: lightgreen}
 #right table{margin-top: 30px}
