@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>chaofeis — Resume</title>
+	<!-- <link rel="shortcut icon" href="/favicon.ico"/> -->
+	<link rel="apple-touch-icon" href="/joyneop.png"/>
+	<link rel="stylesheet" type="text/css" href="yart-main.css">
+	<script src="./yart.js"></script>
+	<style>
+	#source-md {
+		display: none;
+	}
+	</style>
+	<script type="text/javascript">
+	window.addEventListener('load', function(){
+		window.theDoms = document.body.getElementsByClassName('lazy-display-animation');
+		window.theDelay = 50;
+		for (var i = 0; i < window.theDoms.length; i++) {
+			setTimeout((function(ii){
+				var _fu = function () {
+					window.theDoms[ii].classList.add('played');
+				};
+				return _fu;
+			})(i), window.theDelay*i);
+		};
+		[].map.call(document.body.getElementsByTagName('a'), function (n) {
+			n.target = '_blank';
+		});
+		[].map.call(document.body.querySelectorAll('img[data-async-src]'), function (n) {
+			n.src = n.getAttribute('data-async-src');
+		});
+	}, false);
+	</script>
+</head>
+<body>
+	<div class="page-start"></div>
+	<div id="source-md">
+		@ 孙超飞 
+
+		@@ TEL: [(+86) 185-1461-6567](tel:+86-185-1461-6567)
+		@@ Email: [chaofeis@gmail.com](mailto:chaofeis@gmail.com)
+		@@ Twitter: [@chaofeis](https://twitter.com/chaofeis)
+		@@ Weibo: [@chaofeis](http://weibo.com/u/1825990963)
+		@@ Douban: [@chaofeis](http://www.douban.com/people/chafel)
+
+		# Experience
+
+		// Current
+
+		## Web Developer @nextLegal  {09/2015—Present}
+
+		Develop web site with nodejs, lodash, zepto and so on.
+
+		// Previous
+
+		## Web Developer @CRM Factory  {06/2015—09/2015}
+
+		Develop SPA with angular, bootstrap and backbone.
+
+		# Education
+
+		## 西安电子科技大学 电子工程学院  {08/2010—06/2014}
+
+		# About me
+
+		## Easygoing with people, love coding.  
+
+		:: Learn more: [my github pages](chafel.github.io)
+
+		
+	</div>
+	<div class="grand cont" id="cont">
+		<img class="avatar" data-async-src="../images/avatar.jpg">
+	</div>
+	<div class="download-button-container">
+		<a class="download-button lazy-display-animation" href="resume/FE_chaofei.pdf">Download PDF</a>
+	</div>
+	<script type="text/javascript">
+	var source = document.getElementById('source-md').innerHTML;
+	document.getElementById('source-md').remove();
+	resumeMarkdownParser(source);
+	</script>
+</body>
+</html>
