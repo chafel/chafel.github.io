@@ -190,4 +190,8 @@ footer {
     nav a.active {
         top: -19px;
     }
+    .slide .centered {
+        width: 85%;
+        margin: 150px auto 0;
+    }
 }
