@@ -110,15 +110,15 @@ nav a.active {
 }
 
 #slide-1 {
-    background-color: #D7D3DA;
+    background-color: #FFF;
 }
 
 #slide-2 {
-    background-color: #C6EAAF;
+    background-color: #3CC;
 }
 
 #slide-3 {
-    background-color: #323F4C;
+    background-color: #CCF;
 }
 
 #slide-4 {
@@ -129,7 +129,7 @@ nav a.active {
 .go-prev, .go-next {
     cursor: pointer;
     font-weight: bold;
-    text-decoration: underline;
+    font-size: 20px;
 }
 
 /*自定义内容样式*/
