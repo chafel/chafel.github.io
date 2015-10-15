@@ -164,12 +164,30 @@ nav a.active {
 }
 
 footer {
-    width: 300px;
+    width: 100%;
     position: fixed;
-    bottom: 30px;
-    left: 50%;
-    margin-left: -150px;
+    bottom: 0px;
     text-align: center;
-    color: #00D51E;
+    color: #333;
     z-index: 11;
+}
+
+/*响应式适配。。。*/
+@media (max-width: 760px) {
+    nav ul {
+        margin-top: 50px;
+        padding-left: 0;
+    }
+    nav ul li {
+        width: 25%;
+        margin-bottom: 50px;
+        margin-right: -10px;
+    }
+    nav ul li a{
+        padding: 5px 5px;
+        font-size: 14px;
+    }
+    nav a.active {
+        top: -19px;
+    }
 }
