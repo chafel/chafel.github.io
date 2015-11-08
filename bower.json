@@ -1,0 +1,22 @@
+{
+  "name": "chafel.github.io",
+  "description": "personal github page",
+  "main": "",
+  "authors": [
+    "chaofeis <chaofeis@gmail.com>"
+  ],
+  "license": "MIT",
+  "moduleType": [],
+  "homepage": "http://chafel.github.io",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "underscore": "~1.8.3",
+    "jquery": "~2.1.4"
+  }
+}
