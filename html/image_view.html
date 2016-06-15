@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>iamge view</title>
+  <link rel="home" href="chafel.github.io">
+  <meta name="description"
+        content="实现了图片的垂直和水平居中，当超出外层区域时滚动">
+  <style>
+    .overlay {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: #000;
+      z-index: 15;
+      overflow: auto;
+
+      text-align: center;
+      line-height: 100vh;
+    }
+    img {
+      position: relative;
+      top: auto;
+      bottom: auto;
+      background-color: #fff;
+      vertical-align: middle;
+      margin: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <img src="../images/yanshi.png">
+  </div>
+</body>
+</html>
